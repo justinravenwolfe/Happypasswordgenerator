@@ -9,8 +9,15 @@ function generatePassword() {
     
 
   }
-}
+  var containsUppercase= confirm("would you like your password to contain uppercase letters")
 
+  var containsLowercase= confirm("would you like your password to contain lowercase letters")
+
+  var containsNumbers= confirm("would you like your password to contain numbers")
+
+  var containsSymbols= confirm("would you like your password to contain symbols letters")
+  
+}
 
 
 // Write password to the #password input
