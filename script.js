@@ -67,8 +67,7 @@ function generatePassword() {
   //This is the flag variable for whether password satisfies or not 
   var current_grp = 0;
   //Our loop going through all the required characters within character length untill it is satified
-  while (i < passwordLength)
-  {
+  for(var i = 0; i < passwordLength; i++){
     //The current character
     var symbol = ""; 
     // 0<- Uppercase, 1<- Lowercase, 2<- Numbers, 3<- Symbols
@@ -98,14 +97,11 @@ function generatePassword() {
       //Set the symbol variable equal to the character at that index
       symbol = symbols[index]; 
     }
+    password+=symbol; 
     current_grp++; 
-    i++; 
-
-
-
   }
 
-
+return password;
 }
 
 
