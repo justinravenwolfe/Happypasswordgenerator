@@ -59,18 +59,16 @@ function validatePassword() {
     console.log("Contains Symbols " + passwordoptions);
   }
   console.log(passwordoptions);
+  return generate_password(passwordLength, upperCaseletters,lowerCaseletters, numbers, symbols);
   //Start generating the password 
   //This hold password thus far
 }
-
-function generate_password(){
+//adding parameters 
+function generate_password(length, upper, lower,numbers, symbols){
   var password = "";
-  //This is the index variable
-  var i = 0;
-  //This is the flag variable for whether password satisfies or not 
   var current_grp = 0;
   //Our loop going through all the required characters within character length untill it is satified
-  for(var i = 0; i < passwordLength; i++){
+  for(var i = 0; i < length; i++){
     //The current character
     var symbol = ""; 
     // 0<- Uppercase, 1<- Lowercase, 2<- Numbers, 3<- Symbols
@@ -81,24 +79,18 @@ function generate_password(){
     if(current_grp == 0)
     {
       //Pick a random index in the list
-      var index = Math.random(0, len(upperCaseletters));
-      //Set the symbol variable equal to the character at that index
-      symbol = upperCaseletters[index]; 
+      var symbol = upper[Math.floor(Math.random() * upper.length)];
     } else if (current_grp == 1){
       //Pick a random index in the list
-      var index = Math.random(0, len(lowerCaseletters));
-      //Set the symbol variable equal to the character at that index
-      symbol = lowerCaseletters[index]; 
+      var symbol = lower[Math.floor(Math.random() * lower.length)]; 
     }else if (current_grp == 2){
        //Pick a random index in the list
-      var index = Math.random(0, len(numbers));
+       var symbol = numbers[Math.floor(Math.random() * numbers.length)]; 
        //Set the symbol variable equal to the character at that index
-      symbol = numbers[index]; 
     }else if (current_grp == 3){
       //Pick a random index in the list
-      var index = Math.random(0, len(symbols));
+      var symbol = symbols[Math.floor(Math.random() * symbols.length)]; 
       //Set the symbol variable equal to the character at that index
-      symbol = symbols[index]; 
     }
     password+=symbol; 
     current_grp++; 
