@@ -12,7 +12,7 @@ console.log(upperCaseletters);
 //Loading in an HTML elemenent so an action can be attatched to it
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
+function validatePassword() {
   var passwordLength = prompt("how long do you want your password to be");
   //Array contains all options for Password creation characters
   var passwordoptions = []; 
@@ -61,6 +61,9 @@ function generatePassword() {
   console.log(passwordoptions);
   //Start generating the password 
   //This hold password thus far
+}
+
+function generate_password(){
   var password = "";
   //This is the index variable
   var i = 0;
@@ -103,12 +106,10 @@ function generatePassword() {
 
 return password;
 }
-
-
 // Write password to the #password input
 function writePassword() {
   //Generate the password
-  var password = generatePassword();
+  var password = validatePassword();
   console.log("Password " + password);
   //Going back to HTML and outputting password onto screen
   var passwordText = document.querySelector("#password");
