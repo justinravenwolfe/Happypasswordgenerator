@@ -58,7 +58,54 @@ function generatePassword() {
     passwordoptions = passwordoptions.concat(symbols);
     console.log("Contains Symbols " + passwordoptions);
   }
-console.log(passwordoptions);
+  console.log(passwordoptions);
+  //Start generating the password 
+  //This hold password thus far
+  var password = "";
+  //This is the index variable
+  var i = 0;
+  //This is the flag variable for whether password satisfies or not 
+  var current_grp = 0;
+  //Our loop going through all the required characters within character length untill it is satified
+  while (i < passwordLength)
+  {
+    //The current character
+    var symbol = ""; 
+    // 0<- Uppercase, 1<- Lowercase, 2<- Numbers, 3<- Symbols
+    if(current_grp > 3)
+    {
+      current_grp = 0; 
+    }
+    if(current_grp == 0)
+    {
+      //Pick a random index in the list
+      var index = Math.random(0, len(upperCaseletters));
+      //Set the symbol variable equal to the character at that index
+      symbol = upperCaseletters[index]; 
+    } else if (current_grp == 1){
+      //Pick a random index in the list
+      var index = Math.random(0, len(lowerCaseletters));
+      //Set the symbol variable equal to the character at that index
+      symbol = lowerCaseletters[index]; 
+    }else if (current_grp == 2){
+       //Pick a random index in the list
+      var index = Math.random(0, len(numbers));
+       //Set the symbol variable equal to the character at that index
+      symbol = numbers[index]; 
+    }else if (current_grp == 3){
+      //Pick a random index in the list
+      var index = Math.random(0, len(symbols));
+      //Set the symbol variable equal to the character at that index
+      symbol = symbols[index]; 
+    }
+    current_grp++; 
+    i++; 
+
+
+
+  }
+
+
 }
 
 
