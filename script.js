@@ -15,7 +15,6 @@ var generateBtn = document.querySelector("#generate");
 function validatePassword() {
   var passwordLength = prompt("how long do you want your password to be");
   //Array contains all options for Password creation characters
-  var passwordoptions = []; 
   //Check for whether the password has incorrect length
   if (passwordLength < 8 || passwordLength > 128) {
     alert("please choose an appropriate length for your password");
@@ -29,34 +28,9 @@ function validatePassword() {
   var containsUppercase = confirm("would you like your password to contain uppercase letters"); //True
 
   var containsLowercase = confirm("would you like your password to contain lowercase letters"); //True
-
-  
-
-  if (containsUppercase === true) {
-    //Add uppercase characters as a possibility for generating password
-    passwordoptions = passwordoptions.concat(upperCaseletters);
-    console.log("With Uppercase " + passwordoptions);
-
-
-  
-  }
-
-  if (containsLowercase === true) {
-    //Add lowercase characters as a possibility for generating password
-    passwordoptions = passwordoptions.concat(lowerCaseletters);
-    console.log("With Lowercase " + passwordoptions);
-  }
-
-  if (containsNumbers === true) {
-    //Add uppercase numbers as a possibility for generating password
-    passwordoptions = passwordoptions.concat(numbers);
-    console.log("With Numbers " + passwordoptions);
-  }
-
-  if (containsSymbols === true) {
-    //Add symbols characters as a possibility for generating password
-    passwordoptions = passwordoptions.concat(symbols);
-    console.log("Contains Symbols " + passwordoptions);
+  if(containsNumbers && containsSymbols && containsUppercase && containsLowercase)
+  {
+    
   }
   console.log(passwordoptions);
   return generate_password(passwordLength, upperCaseletters,lowerCaseletters, numbers, symbols);
