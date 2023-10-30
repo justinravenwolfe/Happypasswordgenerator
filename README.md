@@ -29,3 +29,5 @@ Write password to the #password input
 Generate the password
 Going back to HTML and outputting password onto screen
 Add event listener to generate button
+
+Upload Screenshot of project and assets folder
