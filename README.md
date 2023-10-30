@@ -1,4 +1,9 @@
 Java 
+Live website
+https://justinravenwolfe.github.io/Happypasswordgenerator/
+
+Github repository
+git@github.com:justinravenwolfe/Happypasswordgenerator.git
 
 First validating password by using prompts and alerts
 
