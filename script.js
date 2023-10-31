@@ -59,25 +59,17 @@ function validatePassword() {
     console.log("Contains Symbols " + passwordoptions);
   }
   console.log(passwordoptions);
-  return generate_password(passwordLength, upperCaseletters,lowerCaseletters, numbers, symbols);
+  return generate_password(passwordLength, passwordoptions);
   //Start generating the password 
   //This hold password thus far
 }
 //adding parameters 
-function generate_password(length, containsNumbers,containsSymbols ,containsUppercase, containsLowercase){
+function generate_password(length, passwordoptions){
   var password = "";
-  var current_grp = 0;
-  //Our loop going through all the required characters within character length untill it is satified
   for(var i = 0; i < length; i++){
-    //The current character
-    var symbol = ""; 
-    // 0<- Uppercase, 1<- Lowercase, 2<- Numbers, 3<- Symbols
-    //var symbol = upper[Math.floor(Math.random() * upper.length)];
-
+    var symbol = passwordoptions[Math.floor(Math.random() * passwordoptions.length)];
     password+=symbol; 
-    current_grp++; 
   }
-
 return password;
 }
 // Write password to the #password input
