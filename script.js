@@ -64,7 +64,7 @@ function validatePassword() {
   //This hold password thus far
 }
 //adding parameters 
-function generate_password(length, upper, lower,numbers, symbols){
+function generate_password(length, containsNumbers,containsSymbols ,containsUppercase, containsLowercase){
   var password = "";
   var current_grp = 0;
   //Our loop going through all the required characters within character length untill it is satified
@@ -72,26 +72,8 @@ function generate_password(length, upper, lower,numbers, symbols){
     //The current character
     var symbol = ""; 
     // 0<- Uppercase, 1<- Lowercase, 2<- Numbers, 3<- Symbols
-    if(current_grp > 3)
-    {
-      current_grp = 0; 
-    }
-    if(current_grp == 0)
-    {
-      //Pick a random index in the list
-      var symbol = upper[Math.floor(Math.random() * upper.length)];
-    } else if (current_grp == 1){
-      //Pick a random index in the list
-      var symbol = lower[Math.floor(Math.random() * lower.length)]; 
-    }else if (current_grp == 2){
-       //Pick a random index in the list
-       var symbol = numbers[Math.floor(Math.random() * numbers.length)]; 
-       //Set the symbol variable equal to the character at that index
-    }else if (current_grp == 3){
-      //Pick a random index in the list
-      var symbol = symbols[Math.floor(Math.random() * symbols.length)]; 
-      //Set the symbol variable equal to the character at that index
-    }
+    //var symbol = upper[Math.floor(Math.random() * upper.length)];
+
     password+=symbol; 
     current_grp++; 
   }
