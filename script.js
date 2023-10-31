@@ -18,7 +18,7 @@ function validatePassword() {
   var passwordoptions = []; 
   //Check for whether the password has incorrect length
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("please choose an appropriate length for your password");
+    alert("Please choose a number between 8 and 128");
     return
 
   }
