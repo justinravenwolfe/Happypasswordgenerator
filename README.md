@@ -23,6 +23,8 @@ add parameters
 
 Second Create for loop
 
+ <!-- Instead of sendingn in separate list of different typess of characters, numbers, symbols, etc.  Send  in the password options list already preloaded with the correct characters along with the length of the password.  Then simplified the logic of password generate to just use for loop and math.random to pick that number of random character to build to password. -->
+
 Use math floor to pick random index in the list
 Set the symbol variable equal to the character at that index
 Write password to the #password input
